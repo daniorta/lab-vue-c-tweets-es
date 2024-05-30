@@ -1,12 +1,7 @@
-<template>
-  <div class="app">
-    <Tweet />
-  </div>
-</template>
-
 <script setup>
   import { ref } from 'vue';
   import Tweet from './components/Tweet.vue';
+  import ProfileImage from './components/ProfileImage.vue';
 
   const tweets = ref([
     {
@@ -38,6 +33,18 @@
     }
 ]);
 </script>
+
+<template>
+  <div class="app">
+   
+    <!-- <Tweet :tweet="tweets[0]" ></Tweet> -->
+
+    <Tweet v-for="tweetsArray in tweets " :tweet="tweetsArray">
+      
+    </Tweet>
+  </div>
+</template>
+
 
 <style>
   body {
